@@ -13,22 +13,22 @@ public class MainTest {
     }
 
     @Test
-    public void writeFile() {
+    public void writeToFile() {
         boolean res;
         System.out.println("Тест 1: пустой путь и строка");
-        res = mainClass.writeFile("", "" );
+        res = mainClass.writeToFile("", "" );
         assertEquals(false, res);
         System.out.println("Тест 1 пройден");
         System.out.println("Тест 2: верный путь");
-        res = mainClass.writeFile("/home/artyomv/test", "" );
+        res = mainClass.writeToFile("/home/artyomv/test", "" );
         assertEquals(true, res);
         System.out.println("Тест 2 пройден");
         System.out.println("Тест 3: не верный путь");
-        res = mainClass.writeFile("/home/artyomv/t", "string" );
+        res = mainClass.writeToFile("/home/artyomv/t", "string" );
         assertEquals(false, res);
         System.out.println("Тест 3 пройден");
         System.out.println("Тест 4: верный путь и строка");
-        res = mainClass.writeFile("/home/artyomv/test", "string" );
+        res = mainClass.writeToFile("/home/artyomv/test", "string" );
         assertEquals(true, res);
         System.out.println("Тест 4 пройден");
     }

@@ -9,12 +9,10 @@ public class Main {
 
     public static String inpString;
     public static String pathString;
-    public static String directory;
-    public static String filename;
 
     public static void main(String[] args) {
         inputDate();
-        writeFile(pathString, inpString);
+        writeToFile(pathString, inpString);
     }
 
     public static void inputDate() {
@@ -27,29 +25,16 @@ public class Main {
             inpString = keyboard.nextLine();
         }
 
-        System.out.println("Введите путь к файлу:");
+        System.out.println("Введите путь до файла:");
         pathString = keyboard.nextLine();
         while (pathString.isEmpty()) {
             System.err.println("Пустая строка");
-            System.out.println("Введите путь к файлу:");
+            System.out.println("Введите путь до файла:");
             pathString = keyboard.nextLine();
-        }
-        directory = pathString;
-        System.out.println("Введите название файла:");
-        filename = keyboard.nextLine();
-        while (filename.isEmpty()) {
-            System.err.println("Пустая строка");
-            System.out.println("Введите название файла:");
-            filename = keyboard.nextLine();
-        }
-        if (pathString.charAt(pathString.length() - 1) != '/') {
-            pathString = pathString + '/' + filename;
-        } else {
-            pathString = pathString + filename;
         }
     }
 
-    public static boolean writeFile(String path, String text){
+    public static boolean writeToFile(String path, String text){
         try {
             FileReader reader = new FileReader(path);
             Scanner scan = new Scanner(reader);
