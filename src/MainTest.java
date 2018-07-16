@@ -15,17 +15,21 @@ public class MainTest {
     @Test
     public void writeFile() {
         boolean res;
-        System.out.println("Test 1");
+        System.out.println("Тест 1: пустой путь и строка");
         res = mainClass.writeFile("", "" );
         assertEquals(false, res);
-        System.out.println("Test 2");
+        System.out.println("Тест 1 пройден");
+        System.out.println("Тест 2: верный путь");
         res = mainClass.writeFile("/home/artyomv/test", "" );
         assertEquals(true, res);
-        System.out.println("Test 3");
+        System.out.println("Тест 2 пройден");
+        System.out.println("Тест 3: не верный путь");
         res = mainClass.writeFile("/home/artyomv/t", "string" );
         assertEquals(false, res);
-        System.out.println("Test 4");
+        System.out.println("Тест 3 пройден");
+        System.out.println("Тест 4: верный путь и строка");
         res = mainClass.writeFile("/home/artyomv/test", "string" );
         assertEquals(true, res);
+        System.out.println("Тест 4 пройден");
     }
 }
